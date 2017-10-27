@@ -25,7 +25,7 @@ class PaymentController extends Controller
             'amount' => $bankAccount->getAmount(),
             '_links' => [
                 'payment-process'=>$this->generateUrl('payment', [], true),
-                'transfer-in'=>$this->generateUrl('trainsfer_in', ['amount'=>15], true),
+                'transfer-in'=>$this->generateUrl('transfer_in', ['amount'=>15], true),
             ]
 
         ]);
@@ -59,7 +59,7 @@ class PaymentController extends Controller
     }
 
     /**
-     * @Route("/transfer-in/{amount}", name="trainsfer_in")
+     * @Route("/transfer-in/{amount}", name="transfer_in")
      */
     public function transferInAction(Request $request, $amount)
     {
