@@ -8,6 +8,7 @@
 
 namespace AppBundle\Controller;
 
+use AppBundle\Model\Payment;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\JsonResponse;
@@ -17,8 +18,10 @@ class PaymentController extends Controller
 {
     /**
      * @Route("/", name="home")
+     * @param Request $request
+     * @return JsonResponse
      */
-    public function hometAction(Request $request)
+    public function homeAction(Request $request)
     {
         $bankAccount=$this->get("bank_account");
         return new JsonResponse([
@@ -33,9 +36,13 @@ class PaymentController extends Controller
 
     /**
      * @Route("/process-payment", name="payment")
+     * @param Request $request
      */
     public function paymentAction(Request $request)
     {
+
+        $payment = new Payment();
+
         /*
          * Implement using Command Form and Handler the following business logic:
          *
@@ -45,8 +52,7 @@ class PaymentController extends Controller
          * - Amount (Money)
          *
          * Business requirements:
-         * - Create a payment
-         * - Process payment
+         * - Create a payment & process it
          * - Create invoice
          * - Send Email to From with the payment details and invoice ID and current amount in the account
          * - Send Email to To with the payment details and invoice ID

@@ -1,5 +1,5 @@
 {
-    "name": "asola/invoicer",
+    "name": "dj-suraj/command-bus-demo",
     "license": "proprietary",
     "type": "project",
     "autoload": {
@@ -15,16 +15,17 @@
     "require": {
         "php": ">=5.3.9",
         "doctrine/doctrine-bundle": "~1.4",
+        "doctrine/doctrine-migrations-bundle": "1.0",
         "doctrine/orm": "^2.4.8",
         "incenteev/composer-parameter-handler": "~2.0",
         "sensio/distribution-bundle": "~4.0",
         "sensio/framework-extra-bundle": "^3.0.2",
+        "simple-bus/message-bus": "v3.0.0",
         "symfony/assetic-bundle": "~2.3",
         "symfony/monolog-bundle": "^3.0.2",
         "symfony/swiftmailer-bundle": "~2.3,>=2.3.10",
         "symfony/symfony": "2.7.*",
-        "twig/twig": "^1.0||^2.0",
-        "simple-bus/message-bus" : "v3.0.0"
+        "twig/twig": "^1.0||^2.0"
     },
     "require-dev": {
         "sensio/generator-bundle": "~2.3",
